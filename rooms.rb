@@ -31,4 +31,8 @@ class Rooms
   def remove_song(song_to_be_removed)
     @songs.delete(song_to_be_removed)
   end
+
+  def check_capacity
+   @guests.count < 2 ? "come on in" : "come back later"
+  end
 end
