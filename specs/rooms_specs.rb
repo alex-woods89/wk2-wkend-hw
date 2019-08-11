@@ -14,14 +14,14 @@ class RoomsTest < MiniTest::Test
 
     @songs = [@song1, @song2, @song3]
 
-    @guest1 = Guests.new("Bob")
-    @guest2 = Guests.new("Charlotte")
-    @guest3 = Guests.new("Laura")
-    @guest4 = Guests.new("Frank")
+    @guest1 = Guests.new("Bob", 10)
+    @guest2 = Guests.new("Charlotte", 15)
+    @guest3 = Guests.new("Laura", 25)
+    @guest4 = Guests.new("Frank", 3)
 
     @guests = [@guest1, @guest2, @guest3, @guest4]
 
-    @room1 = Rooms.new("party room", [], [])
+    @room1 = Rooms.new("party room", [], [], 100)
 
   end
 
@@ -77,5 +77,13 @@ class RoomsTest < MiniTest::Test
     @room1.add_guest(@guest3)
     assert_equal("come back later", @room1.check_capacity)
   end
+
+  def test_serve_customer
+    @guest1.buy_ticket
+    assert_equal(5, @guest1.wallet)
+    @room1.add_entry_fee_to_till
+    assert_equal(105, @room1.till)
+  end
+
 
 end

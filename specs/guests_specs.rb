@@ -2,6 +2,7 @@ require("minitest/autorun")
 require("minitest/rg")
 require_relative("../guests")
 
+
 class GuestsTest < MiniTest::Test
 
 def setup
@@ -13,10 +14,13 @@ def test_has_name
 end
 
 def test_has_money_in_wallet
-  assert_equal(10, @guest.wallet)
+  assert_equal(10, @guest1.wallet)
 end
 
-def test_can_buy_ticket
+def test_buy_ticket
+  @guest1.buy_ticket
+  assert_equal(5, @guest1.wallet)
 end
+
 
 end

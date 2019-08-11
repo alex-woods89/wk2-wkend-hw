@@ -1,11 +1,13 @@
 class Rooms
 
   attr_reader :name
+  attr_accessor :till
 
-  def initialize(name, guests, songs)
+  def initialize(name, guests, songs, till)
     @name = name
     @guests = []
     @songs = []
+    @till = till
   end
   #count number of guests already in guests array
   def guest_count
@@ -35,4 +37,11 @@ class Rooms
   def check_capacity
    @guests.count < 2 ? "come on in" : "come back later"
   end
+
+  def add_entry_fee_to_till
+    @till +=  5
+  end
+
+
+
 end
