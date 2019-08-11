@@ -42,6 +42,12 @@ class Rooms
     @till +=  5
   end
 
-
+  # def favourite_song_is_playing(room_playlist)
+  #   for song in @songs
+  #     if song == @favourite_song
+  #       return "woo"
+  #   end
+  # end
+  # end
 
 end

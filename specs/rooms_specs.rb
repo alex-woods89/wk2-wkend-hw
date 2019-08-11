@@ -12,14 +12,9 @@ class RoomsTest < MiniTest::Test
     @song2 = Song.new("crazy train")
     @song3 = Song.new("war pigs")
 
-    @songs = [@song1, @song2, @song3]
-
-    @guest1 = Guests.new("Bob", 10)
-    @guest2 = Guests.new("Charlotte", 15)
-    @guest3 = Guests.new("Laura", 25)
-    @guest4 = Guests.new("Frank", 3)
-
-    @guests = [@guest1, @guest2, @guest3, @guest4]
+    @guest1 = Guests.new("Bob", 10, "paranoid")
+    @guest2 = Guests.new("Charlotte", 15, "crazy train")
+    @guest3 = Guests.new("Laura", 25, "war pigs")
 
     @room1 = Rooms.new("party room", [], [], 100)
 
@@ -85,5 +80,11 @@ class RoomsTest < MiniTest::Test
     assert_equal(105, @room1.till)
   end
 
+  # def test_favourite_song_is_playing
+  #   @room1.add_song(@song1)
+  #   @room1.add_guest(@guest1)
+  #   @room1.favourite_song_is_playing(@guest1.favourite_song)
+  #   assert_equal("woo",)
+  # end
 
 end
